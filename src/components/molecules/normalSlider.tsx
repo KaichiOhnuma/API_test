@@ -1,29 +1,30 @@
 import { type } from "@testing-library/user-event/dist/type"
 import { Slider } from "antd"
 import { useEffect, useState } from "react"
+
 import styled from "styled-components"
 
-type props ={
+type Props ={
     value: number ;
     setValue: Function;
     valueName: string;
 }
 
-const NormalSlider = (props: props) => {
-    const VALUE_NAME = props.valueName
+const NormalSlider = ({value, setValue, valueName}: Props) => {
+    const VALUE_NAME = valueName
 
     useEffect(() => {
-        console.log(props.valueName + ': ' + props.value)
-    }, [props.value])
+        console.log(valueName + ': ' + value)
+    }, [value])
 
     return( 
         <div>
             <SliderWrapper>
                 <Slider
-                 value={props.value}
-                 onChange={(val) => props.setValue(val)}/>
+                 value={value}
+                 onChange={(val) => setValue(val)}/>
             </SliderWrapper>
-            <p>{VALUE_NAME}: {props.value}</p>
+            <p>{VALUE_NAME}: {value}</p>
         </div>
     )
 }

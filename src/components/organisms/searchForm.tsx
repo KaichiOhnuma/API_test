@@ -4,8 +4,8 @@ import { SearchOutlined } from '@ant-design/icons';
 import NormalSlider from "../molecules/normalSlider"
 
 const SearchForm = () => {
-    const [danceability, setDanceability] = useState(80)
-    const [bpm, setBpm] = useState(100)
+    const [danceability, setDanceability] = useState<number>(80)
+    const [bpm, setBpm] = useState<number>(100)
 
     const search = () => {
         console.log('search')
