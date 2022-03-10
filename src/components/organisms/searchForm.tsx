@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Button } from "antd"
 import { SearchOutlined } from '@ant-design/icons';
-import NormalSlider from "../molecules/normalSlider"
+import Slider from "../molecules/slider"
 
 const SearchForm = () => {
     const [danceability, setDanceability] = useState<number>(80)
@@ -13,8 +13,8 @@ const SearchForm = () => {
 
     return(
         <div>
-            <NormalSlider value={danceability} setValue={setDanceability} valueName='danceability'/>
-            <NormalSlider value={bpm} setValue={setBpm} valueName='BPM'/>
+            <Slider value={danceability} setValue={setDanceability} valueName='danceability'/>
+            <Slider value={bpm} setValue={setBpm} valueName='BPM'/>
             <Button type="primary" icon={<SearchOutlined />} onClick={search}>
              Search
             </Button>

@@ -1,5 +1,5 @@
 import { type } from "@testing-library/user-event/dist/type"
-import { Slider } from "antd"
+import { Slider as AntdSlider } from "antd"
 import { useEffect, useState } from "react"
 
 import styled from "styled-components"
@@ -10,7 +10,7 @@ type Props ={
     valueName: string;
 }
 
-const NormalSlider = ({value, setValue, valueName}: Props) => {
+const Slider = ({value, setValue, valueName}: Props) => {
     const VALUE_NAME = valueName
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const NormalSlider = ({value, setValue, valueName}: Props) => {
     return( 
         <div>
             <SliderWrapper>
-                <Slider
+                <AntdSlider
                  value={value}
                  onChange={(val) => setValue(val)}/>
             </SliderWrapper>
@@ -36,4 +36,4 @@ display: inline-block;
 height: 30px;
 `;
 
-export default NormalSlider
+export default Slider
